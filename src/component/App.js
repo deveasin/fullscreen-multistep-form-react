@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ProgressBar from './ProgressBar';
+import SubmitBtn from './SubmitBtn';
 import StepWrapper from './StepWrapper';
 import Step from './Step';
 import Success from './Success';
@@ -23,15 +25,12 @@ function App() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if(currentStep < totalStep){
-      setCurrentStep(currentStep + 1);
-      return false;
-    }
+    setCurrentStep(currentStep + 1);
+    if(currentStep < totalStep){return false;}
     setForm({
       ...form,
       isSubmit: true
     });
-
   }
 
   return (
@@ -45,20 +44,27 @@ function App() {
             <>
               <StepWrapper SetTotalStep={SetTotalStep} currentStep={currentStep}>
                 <Step>
-                    <input onChange={changeHandler} name="fullname" type="text" placeholder="Full Name"/>
+                    <label>What's your <strong>name</strong>?</label>
+                    <input onChange={changeHandler} name="fullname" type="text" value={form.formsData['fullname'] ? form.formsData['fullname'] : ''} />
+                    {form.formsData['fullname'] ? <SubmitBtn name="Ok" help /> : ''}
                 </Step>
                 <Step>
-                  <input onChange={changeHandler} type="email" name="email" placeholder="Email Address"/>
+                  <label>What's you email <strong>address</strong>?</label>
+                  <input onChange={changeHandler} type="email" name="email" value={form.formsData['email'] ? form.formsData['email'] : ''}/>
+                  {form.formsData['email'] ? <SubmitBtn name="Ok" help /> : ''}
                 </Step>
                 <Step>
-                  <textarea onChange={changeHandler} name="message" cols="30" rows="10" placeholder="Message"></textarea>
-                  <input type="submit"/>
+                  <label>What's you favourite <strong>quote</strong>?</label>
+                  <textarea onChange={changeHandler} name="message" cols="30" rows="10" placeholder="Message" defaultValue={form.formsData['message'] ? form.formsData['message'] : ''}></textarea>
+                  <SubmitBtn style={{textAlign: 'center'}} />
                 </Step>
               </StepWrapper>
             </>
           }
         </div>
       </form>
+
+      <ProgressBar currentStep={currentStep} totalStep={totalStep} setCurrentStep={setCurrentStep} setForm={setForm} form={form} />
     </div>
   );
 }

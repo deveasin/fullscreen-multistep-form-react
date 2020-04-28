@@ -24,8 +24,10 @@ textarea {
   border: 1px solid #fff3cd;
   max-width: 100%;
   box-sizing: border-box;
-  margin-bottom: 15px;
   border-radius: 5px;
+  color: #2633FF;
+  font-size: 18px;
+  font-weight: 500;
 }
 textarea{
   height: 150px;
@@ -34,7 +36,7 @@ input:last-child{
   margin-bottom: 0;
 }
 input[type="submit"]{
-  background-color: #4d3e3e;
+  background-color: #2633FF;
   border: none;
   transition: all .4s;
   color: #fff;
@@ -48,19 +50,29 @@ input[type="submit"]{
   padding: 18px 25px;
   margin-top: 10px;
   cursor: pointer;
-
 }
 input[type="submit"]:hover{
-  background-color: #ff926b;
+  background-color: #2633FF;
+}
+label {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.submit-btn span {
+  margin-left: 10px;
+  max-width: 100%;
+  font-weight: unset;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: sans-serif;
 }
 .form-inputs {
-  max-width: 1100px;
+  max-width: 800px;
   padding: 30px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -74,6 +86,68 @@ input[type="submit"]:hover{
   list-style: none;
 }
 .form-success-page ul li{
-  color: #fff3cd;
+  color: #333;
   font-weight: bold;
+}
+.progress-container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex
+}
+.navigation ul li {
+  background-color: #2633FF;
+  color: #fff;
+  margin-left: 1px;
+  padding: 9px 15px;
+  display: inline-block;
+  font-size: 25px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.navigation ul li:first-child{
+  margin-left: 0;
+}
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  display: block;
+  height: 5px;
+  border-radius: 100px;
+}
+.progress-bar-content {
+  flex: 1;
+  max-width: 150px;
+  margin-bottom: 12px;
+  margin-right: 10px;
+}
+.progress-bar-content h4 {
+  margin: 0;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 12px;
+}
+.progress {
+  background-color: #2633FF;
+  display: block;
+  height: 5px;
+  border-radius: 100px;
+  max-width: 100%;
+}
+.form-success-page {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 3px;
+}
+.form-success-page h1 {
+  margin-top: 0;
 }

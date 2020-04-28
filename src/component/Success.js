@@ -18,7 +18,7 @@ const Success = ({formData, setForm, setCurrentStep, SetTotalStep}) => {
                 formKeys.length ? 
                     <ul>
                         {formKeys.map(key => {
-                            return <li key={key}>{`${key}: ${formData[key]}`}</li>
+                            return <li key={key}>{`${key[0].toUpperCase() + key.slice(1)}: ${formData[key]}`}</li>
                         })}
                     </ul>
                 : ''
